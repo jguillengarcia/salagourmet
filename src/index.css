@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.fc {
+  /* FullCalendar styles */
+  --fc-border-color: #e5e7eb;
+  --fc-button-bg-color: #4F46E5;
+  --fc-button-border-color: #4F46E5;
+  --fc-button-hover-bg-color: #4338CA;
+  --fc-button-hover-border-color: #4338CA;
+  --fc-button-active-bg-color: #4338CA;
+  --fc-button-active-border-color: #4338CA;
+}
+
+/* Responsive calendar styles */
+.fc-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.fc .fc-toolbar.fc-header-toolbar {
+  margin-bottom: 1em;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .fc .fc-toolbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fc .fc-toolbar-title {
+    font-size: 1.2rem !important;
+    margin: 0.5rem 0;
+  }
+
+  .fc .fc-button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.875rem;
+  }
+
+  .fc .fc-daygrid-day-number {
+    font-size: 0.875rem;
+    padding: 0.3rem;
+  }
+}
+
+.fc .fc-button {
+  @apply font-semibold text-sm;
+}
+
+.fc .fc-button-primary:not(:disabled):active,
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+  @apply bg-indigo-700 border-indigo-700;
+}
+
+.fc .fc-daygrid-day.fc-day-today {
+  @apply bg-indigo-50;
+}
+
+.fc .fc-daygrid-day-number {
+  @apply text-sm text-gray-700;
+}
+
+.fc .fc-toolbar-title {
+  @apply text-xl font-semibold text-gray-900;
+}
+
+/* Make calendar events more visible on mobile */
+.reservation-event {
+  min-height: 2.5rem;
+}
